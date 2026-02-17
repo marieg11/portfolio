@@ -374,7 +374,8 @@
     .edu-card{
       position:relative;
       padding:16px;
-      padding-top:45px;                /* so the title doesn't crash into logo */
+      padding-top:40px;                /* so the title doesn't crash into logo */
+      padding-bottom: 30px;
     }
 
     /* Heading & meta inside edu cards = same as experience */
@@ -1175,7 +1176,7 @@
       localStorage.setItem('theme', mode);
     }
     const saved = localStorage.getItem('theme');
-    applyTheme(saved || 'light');
+    applyTheme(saved || 'dark');
 
     toggleBtn.addEventListener('click', ()=>{
       const next = root.classList.contains('light') ? 'dark' : 'light';
