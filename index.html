@@ -19,7 +19,10 @@
       --shadow:none;         /* no shadows in dark mode */
 
       /* Hero title size */
-      --hero-size:clamp(24px, 4vw, 34px);
+      /*--hero-size:clamp(24px, 4vw, 34px);*/
+
+      --section-title-size: 1.8rem; /* tweak if you want */
+      --hero-size: var(--section-title-size);
 
       /*spacing between sections*/
       --section-spacing:40px;   
@@ -249,7 +252,7 @@
     .top .contact{display:flex; flex-wrap:wrap; gap:10px}
     .pill{border:1px solid var(--ring); border-radius:999px; padding:6px 10px; color:var(--muted); background:color-mix(in oklab, var(--panel) 70%, transparent)}
     .summary{display:grid; gap:6px}
-    h2{
+    h1{
       font-size:var(--hero-size);
       margin:0;
       line-height:1.1;
@@ -264,6 +267,7 @@
       border:1px solid var(--ring);
       border-radius:16px;
       padding:16px;
+      padding-bottom: 20px; 
       box-shadow:var(--shadow);
     }
     footer{padding:28px 0; color:var(--muted); text-align:center}
@@ -327,6 +331,7 @@
     }
     .timeline .card{
       padding-top:40px; /* push content down so logo doesn't collide with title */
+      padding-bottom: 20px; 
     }
 
 
@@ -707,6 +712,10 @@
     }
   </style>
 </head>
+
+
+
+  
 <body>
   <header>
     <div class="container">
