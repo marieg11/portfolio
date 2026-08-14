@@ -721,14 +721,15 @@
     #contact .card, #contact .card *, #contact .card strong{color:var(--muted)}
     #contact .card strong{font-weight:600}
 
-    /* Make typed form text black */
-    .contact-form input,
-    .contact-form textarea{
-      color:#1f1f1f;
+    /* Make text typed into the form boxes black */
+    #contact .card .contact-form input,
+    #contact .card .contact-form textarea{
+      color:#1f1f1f !important;
+      -webkit-text-fill-color:#1f1f1f !important;
     }
 
     #contact .btn{
-      font-weight:700;
+      font-weight:600;
     }
 
     #skills .card h3{
