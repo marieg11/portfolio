@@ -1341,7 +1341,7 @@
       localStorage.setItem('theme', mode);
     }
     const saved = localStorage.getItem('theme');
-    applyTheme(saved || 'dark');
+    applyTheme(saved || 'light');
 
     toggleBtn.addEventListener('click', ()=>{
       const next = root.classList.contains('light') ? 'dark' : 'light';
