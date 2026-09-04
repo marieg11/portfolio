@@ -32,7 +32,7 @@
       --panel:#f5fcf1;
       --text:#393939;
       --muted:#898989;
-      --ring:#00ad48;
+      --ring:#01b852;
       --shadow:none;         /* no shadows in light mode */
     }
 
@@ -1370,7 +1370,7 @@
       localStorage.setItem('theme', mode);
     }
     const saved = localStorage.getItem('theme');
-    applyTheme(saved || 'light');
+    applyTheme(saved || 'dark');
 
     toggleBtn.addEventListener('click', ()=>{
       const next = root.classList.contains('light') ? 'dark' : 'light';
