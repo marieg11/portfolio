@@ -815,6 +815,83 @@
     }
 
 
+    /* ===== Project Filters ===== */
+
+    .proj-filters{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:6px 0 16px;
+    }
+
+    .proj-filter{
+      background:var(--bg);
+      border:1px solid var(--ring);
+      border-radius:12px;
+      padding:10px 16px;
+      color:var(--text);
+      font-size:0.95rem;
+      font-weight:600;
+      cursor:pointer;
+      outline:none;
+    }
+
+    .proj-filter:hover{
+      background:color-mix(in oklab, var(--panel) 40%, var(--bg));
+    }
+
+    .proj-filter.is-active{
+      background:var(--panel);
+      border-color:var(--ring);
+      box-shadow:none;
+    }
+
+    .proj-filter:focus-visible{
+      outline:none;
+      box-shadow:none;
+    }
+
+
+    /* Learn More button */
+    .proj-thumbnail-learn{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+
+      background:#fff;
+      color:#000;
+
+      border:1px solid #000;
+      border-radius:10px;
+
+      padding:8px 16px;
+
+      font-size:1rem;
+      font-weight:600;
+
+      opacity:0;
+      transition:opacity 150ms ease;
+    }
+
+    /* Show button when thumbnail is hovered */
+    @media (hover:hover){
+      .proj-thumbnail-wrapper:hover .proj-thumbnail-learn{
+        opacity:1;
+      }
+    }
+
+    @media (hover:hover){
+      .proj-thumbnail-wrapper:hover img{
+        filter:brightness(0.85);
+      }
+
+      .proj-thumbnail-wrapper:hover .proj-thumbnail-learn{
+        opacity:1;
+      }
+    }
+
+
     
   </style>
 </head>
@@ -840,7 +917,7 @@
             <a class="btn btn--ghost" href="#experience" data-scroll="#experience">Professional Experience</a>
             <a class="btn btn--ghost" href="#professional-development" data-scroll="#professional-development">Professional Development</a>
             <a class="btn btn--ghost" href="#volunteer"  data-scroll="#volunteer">Volunteer Experience</a>
-            <!--<a class="btn btn--ghost" href="#projects"   data-scroll="#projects">Projects</a>-->
+            <a class="btn btn--ghost" href="#projects"   data-scroll="#projects">Projects</a>
             <a class="btn btn--ghost" href="#education"   data-scroll="#education">Education</a>
             <a class="btn btn--ghost" href="#skills"     data-scroll="#skills">Skills</a>
             <a class="btn btn--ghost" href="#contact"    data-scroll="#contact">Contact</a>
@@ -873,7 +950,7 @@
       <a href="#experience" data-scroll="#experience">Professional Experience</a>
       <a href="#professional-development" data-scroll="#professional-development">Professional Development</a>
       <a href="#volunteer"  data-scroll="#volunteer">Volunteer Experience</a>
-      <!--<a href="#projects"   data-scroll="#projects">Projects</a>-->
+      <a href="#projects"   data-scroll="#projects">Projects</a>
       <a href="#education"   data-scroll="#education">Education</a>
       <a href="#skills"     data-scroll="#skills">Skills</a>
       <a href="#contact"    data-scroll="#contact">Contact</a>
@@ -1229,6 +1306,209 @@
     </section>
 
 
+
+    
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section" aria-labelledby="proj-title">
+      <h2 id="proj-title">Projects</h2>
+      
+      <div class="proj-filters" role="tablist" aria-label="Project categories">
+          <button class="proj-filter is-active" type="button" data-filter="all" aria-selected="true">All</button>
+          <button class="proj-filter" type="button" data-filter="data" aria-selected="false">Data</button>
+          <button class="proj-filter" type="button" data-filter="software" aria-selected="false">Software</button>
+          <button class="proj-filter" type="button" data-filter="research" aria-selected="false">Research</button>
+          <button class="proj-filter" type="button" data-filter="design" aria-selected="false">Design</button>
+        </div>
+      
+      <div class="grid">        
+
+
+        
+        <article class="card project-card" data-tags="design">
+          <a class="proj-thumbnail-button"
+             href="projects/cmput301_figma"
+             aria-label="figma prototype">
+            <div class="proj-thumbnail-wrapper">
+              <img src="images/cmput301_figma_thumbnail.png"
+                   alt="thumbnail" />
+              <span class="proj-thumbnail-learn">Learn More</span>
+            </div>
+          </a>
+          <h3>Figma App Design</h3>
+          <div class="proj-meta">Jan 2026</div>
+          <p>ETL + dashboard for campaign performance, LTV, and cohort retention.</p>
+          <!--<div class="badges">
+            <span class="badge">Python</span>
+            <span class="badge">BigQuery</span>
+            <span class="badge">dbt</span></div>-->       
+        </article>
+
+
+
+
+        <article class="card project-card" data-tags="software">
+          <a class="proj-thumbnail-button"
+             href="projects/dfg_2026_presentation"
+             aria-label="figma prototype">
+            <div class="proj-thumbnail-wrapper">
+              <img src="images/dfg_2026_presentation_thumbnail.png"
+                   alt="thumbnail" />
+              <span class="proj-thumbnail-learn">Learn More</span>
+            </div>
+          </a>
+          <h3>Non-Profit Wordpress Site</h3>
+          <div class="proj-meta">Feb 2026</div>
+          <p>ETL + dashboard for campaign performance, LTV, and cohort retention.</p>
+          <!--<div class="badges">
+            <span class="badge">Python</span>
+            <span class="badge">BigQuery</span>
+            <span class="badge">dbt</span></div>-->       
+        </article>
+
+
+
+        <article class="card project-card" data-tags="data">
+          <a class="proj-thumbnail-button"
+             href="projects/lazyfaire_data_report"
+             aria-label="figma prototype">
+            <div class="proj-thumbnail-wrapper">
+              <img src="images/lazyfaire_data_report_thumbnail.png"
+                   alt="thumbnail" />
+              <span class="proj-thumbnail-learn">Learn More</span>
+            </div>
+          </a>
+          <h3>Magazine Data Report</h3>
+          <div class="proj-meta">April 2026</div>
+          <p>ETL + dashboard for campaign performance, LTV, and cohort retention.</p>
+          <!--<div class="badges">
+            <span class="badge">Python</span>
+            <span class="badge">BigQuery</span>
+            <span class="badge">dbt</span></div>-->       
+        </article>
+
+
+
+
+        <article class="card project-card" data-tags="design">
+          <a class="proj-thumbnail-button"
+             href="projects/etsy_planner"
+             aria-label="figma prototype">
+            <div class="proj-thumbnail-wrapper">
+              <img src="images/etsy_planner_thumbnail.png"
+                   alt="thumbnail" />
+              <span class="proj-thumbnail-learn">Learn More</span>
+            </div>
+          </a>
+          <h3>Digital Planner</h3>
+          <div class="proj-meta">Nov 2025</div>
+          <p>ETL + dashboard for campaign performance, LTV, and cohort retention.</p>
+          <!--<div class="badges">
+            <span class="badge">Python</span>
+            <span class="badge">BigQuery</span>
+            <span class="badge">dbt</span></div>-->       
+        </article>
+
+
+        <article class="card project-card" data-tags="data">
+          <a class="proj-thumbnail-button"
+             href="projects/dfg_2025_presentation"
+             aria-label="figma prototype">
+            <div class="proj-thumbnail-wrapper">
+              <img src="images/dfg_2025_presentation_thumbnail.png"
+                   alt="thumbnail" />
+              <span class="proj-thumbnail-learn">Learn More</span>
+            </div>
+          </a>
+          <h3>Non-Profit Data Pipeline</h3>
+          <div class="proj-meta">Feb 2025</div>
+          <p>ETL + dashboard for campaign performance, LTV, and cohort retention.</p>
+          <!--<div class="badges">
+            <span class="badge">Python</span>
+            <span class="badge">BigQuery</span>
+            <span class="badge">dbt</span></div>-->       
+        </article>
+
+
+
+        <article class="card project-card" data-tags="research">
+          <a class="proj-thumbnail-button"
+             href="projects/psych329_research_paper"
+             aria-label="figma prototype">
+            <div class="proj-thumbnail-wrapper">
+              <img src="images/psych329_research_paper_thumbnail.png"
+                   alt="thumbnail" />
+              <span class="proj-thumbnail-learn">Learn More</span>
+            </div>
+          </a>
+          <h3>Research Paper</h3>
+          <div class="proj-meta">Dec 2025</div>
+          <p>ETL + dashboard for campaign performance, LTV, and cohort retention.</p>
+          <!--<div class="badges">
+            <span class="badge">Python</span>
+            <span class="badge">BigQuery</span>-->    
+        </article>
+
+
+
+
+
+        <article class="card project-card" data-tags="research">
+          <a class="proj-thumbnail-button"
+             href="projects/psych381_research_presentation"
+             aria-label="figma prototype">
+            <div class="proj-thumbnail-wrapper">
+              <img src="images/psych329_research_presentation_thumbnail.png"
+                   alt="thumbnail" />
+              <span class="proj-thumbnail-learn">Learn More</span>
+            </div>
+          </a>
+          <h3>Research Presentation</h3>
+          <div class="proj-meta">Apr 2026</div>
+          <p>ETL + dashboard for campaign performance, LTV, and cohort retention.</p>
+          <!--<div class="badges">
+            <span class="badge">Python</span>
+            <span class="badge">BigQuery</span>-->    
+        </article>
+
+
+
+
+        
+        <article class="card project-card" data-tags="software">
+          <img src="images/connect-four.png" alt="Mobile app mockup" />
+          <h3>Connect Four</h3>
+          <div class="proj-meta">Aug 2024</div>
+          <p>Android mood tracker using on-device ML for sentiment.</p>
+          <!--<div class="badges">
+            <span class="badge">Python</span>
+            <span class="badge">Algorithms</span></div>-->
+        </article>
+
+
+        
+        <article class="card project-card" data-tags="software">
+          <img src="images/fruit-fall.png" alt="Notebook with code" />
+          <h3>Fruit Fall</h3>
+          <div class="proj-meta">Dec 2024</div>
+          <p>AI solver exploring A*, transposition tables, and heuristic tuning.</p>
+          <!--<div class="badges">
+            <span class="badge">Python</span>
+            <span class="badge">Tkinter</span></div>-->
+        </article>
+
+
+        
+      </div>
+    </section>
+
+
+
+
+
+    
+
+
     <!-- ===== EDUCATION ===== -->
     <section id="education" class="section" aria-labelledby="edu-title">
       <h2 id="edu-title">Education</h2>
@@ -1573,6 +1853,42 @@
         }
       });
     }
+
+
+    // ===== Projects filter (Data / Software / Research / Design) =====
+      const filterButtons = document.querySelectorAll('.proj-filter');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      function setProjectFilter(filter){
+        // buttons UI state
+        filterButtons.forEach(btn => {
+          const active = btn.dataset.filter === filter;
+          btn.classList.toggle('is-active', active);
+          btn.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+
+        // show/hide cards
+        projectCards.forEach(card => {
+          const tags = (card.dataset.tags || '').split(/\s+/).filter(Boolean);
+          const show = (filter === 'all') || tags.includes(filter);
+          card.style.display = show ? '' : 'none';
+        });
+      }
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => setProjectFilter(btn.dataset.filter));
+      });
+
+      // default
+      setProjectFilter('all');
+
+
+
+      
+    }
+
+
+    
   </script>
 </body>
 </html>
