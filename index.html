@@ -1859,7 +1859,29 @@
       });
     }
 
+    // ===== Experience master–detail switching =====
+    document.querySelectorAll('.exp-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-exp');
 
+        // Update active state on list items
+        document.querySelectorAll('.exp-item').forEach(b => {
+          const active = b === btn;
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+
+        // Show the matching detail panel
+        document.querySelectorAll('.exp-panel').forEach(panel => {
+          const active = panel.id === targetId;
+          panel.hidden = !active;
+          panel.classList.toggle('is-active', active);
+        });
+      });
+    });
+
+
+    
     // ===== Projects filter (Data / Software / Research / Design) =====
       const filterButtons = document.querySelectorAll('.proj-filter');
       const projectCards = document.querySelectorAll('.project-card');
@@ -1888,11 +1910,10 @@
       setProjectFilter('all');
 
 
-
-      
-    }
+    
 
 
+    
     
   </script>
 </body>
