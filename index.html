@@ -284,7 +284,8 @@
     /* ===== Timeline ===== */
 
     
-    .timeline{position:relative; margin:24px 0;}
+    /*.timeline{position:relative; margin:24px 0;}*/
+    .timeline{position:relative}
     
     .timeline::before{
       content:"";
@@ -302,6 +303,7 @@
       position: relative;
       width: 100%;
       box-sizing: border-box;
+      
       padding: 14px 0;
       min-height: 100px;
     }
@@ -343,9 +345,9 @@
     .dot{
       position:absolute;
       /*top:22px;*/
-      top: 14px
+      top: 0px
       left:50%;
-      transform:translateX(-50%);
+      transform:translate(-50%, 0%);
       background:var(--panel);
       border:2px solid var(--ring);
       width:55px; /*logo box sizes*/
