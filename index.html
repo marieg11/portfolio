@@ -314,7 +314,7 @@
       position:absolute;
       top:22px;
       left:50%;
-      transform:translate(-50%,-50%);
+      transform:translate(-50%,0%);
       background:var(--panel);
       border:2px solid var(--ring);
       width:55px; /*logo box sizes*/
@@ -332,6 +332,12 @@
       z-index:1;
       position:relative;
     }
+
+    /* Small gap between experience logo and card */
+    .timeline .dot {
+      top: 14px;
+    }
+    
     .timeline .card{
       padding-top:40px; /* push content down so logo doesn't collide with title */
       padding-bottom: 24px; 
