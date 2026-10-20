@@ -282,7 +282,10 @@
     }
 
     /* ===== Timeline ===== */
+
+    
     .timeline{position:relative; margin:24px 0;}
+    
     .timeline::before{
       content:"";
       position:absolute;
@@ -293,25 +296,50 @@
       background:linear-gradient(180deg, transparent, var(--ring), transparent);
       z-index:0;
     }
-    .item{position:relative; width:50%; padding:14px;}
+
+    /* Each item spans the full timeline width */
+    .timeline .item {
+      position: relative;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px 0;
+      min-height: 100px;
+    }
+
+    /*.item{position:relative; width:50%; padding:14px;}*/
+    
     .item h3{margin:0 0 4px 0}
+    
     .item .meta{color:var(--muted); font-weight:550; margin-bottom:8px}
+    
     .item .meta a {
       color: inherit;        /* use the same muted color */
       font-weight: inherit;  /* don't make it heavier */
       text-decoration: none; /* no underline by default */
     }
+    
     .item .meta a:hover {
       color: inherit;        /* stay same color on hover */
       text-decoration: underline; /* just add the underline */
     }
+    
     .item ul{margin:8px 0 0 0;    /* no outer left margin */
       padding-left:18px; /*small padding so bullets don’t touch the border*/
     }
+    
     /*.item[data-side="left"]{left:0; padding-right:28px}
     .item[data-side="right"]{left:50%; padding-left:28px}*/
-    .item[data-side="left"]{left:0; padding-right:40px}
-    .item[data-side="right"]{left:50%; padding-left:40px}
+    /* Alternate cards on either side of the timeline */
+    .item[data-side="left"] .card {
+      width: calc(50% - 40px);
+      margin-right: auto;
+    }
+
+    .item[data-side="right"] .card {
+      width: calc(50% - 40px);
+      margin-left: calc(50% + 40px);
+    }
+    
     .dot{
       position:absolute;
       /*top:22px;*/
@@ -322,30 +350,41 @@
       border:2px solid var(--ring);
       width:55px; /*logo box sizes*/
       height:55px;
+      border-sizing:border-box;
       border-radius:12px;
       display:grid;
       place-items:center;
       box-shadow:var(--shadow);
       z-index:2;
     }
-    .dot img{width:40px; height:40px} /*logo sizes*/
+    .dot img{width:40px; height:40px; object-fit: contain;} /*logo sizes*/
 
+    /*
     .item .card{
       background:var(--panel);
       z-index:1;
       position:relative;
-    }
+    }*/
 
     /* Small gap between experience logo and card */
-    .timeline .dot {
+    /*.timeline .dot {
       top: 14px;
-    }
+      position: absolute;
+    }*/
     
     .timeline .card{
+      position: relative;
+      z-index: 1;
+      background: var(--panel);
       padding-top:40px; /* push content down so logo doesn't collide with title */
       padding-bottom: 24px; 
+      box-sizing : border-box;
     }
 
+
+
+
+    
 
     /* ===== Education grid ===== */
     .edu-subsection{
