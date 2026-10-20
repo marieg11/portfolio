@@ -308,13 +308,16 @@
     .item ul{margin:8px 0 0 0;    /* no outer left margin */
       padding-left:18px; /*small padding so bullets don’t touch the border*/
     }
-    .item[data-side="left"]{left:0; padding-right:28px}
-    .item[data-side="right"]{left:50%; padding-left:28px}
+    /*.item[data-side="left"]{left:0; padding-right:28px}
+    .item[data-side="right"]{left:50%; padding-left:28px}*/
+    .item[data-side="left"]{left:0; padding-right:40px}
+    .item[data-side="right"]{left:50%; padding-left:40px}
     .dot{
       position:absolute;
-      top:22px;
+      /*top:22px;*/
+      top: 14px
       left:50%;
-      transform:translate(-50%,0%);
+      transform:translateX(-50%);
       background:var(--panel);
       border:2px solid var(--ring);
       width:55px; /*logo box sizes*/
